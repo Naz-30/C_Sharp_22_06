@@ -4,7 +4,7 @@
         Console.WriteLine("Числа кратны");
     else
     {
-        Console.WriteLine("Числа не кратны" + a % b);
+        Console.WriteLine("Числа не кратны " + a % b);
     }
 }
 int NumA = int.Parse(Console.ReadLine()!);
