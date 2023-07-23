@@ -14,9 +14,9 @@ double[] lineData2 = InputLineData(LINE2);
 
 if (ValidataLines(lineData1, lineData2))
 {
-    double[] coord = FindCoords(lineData1, LineData2);
-    Console.Write($"Точка пересечения уравнений  y ={ lineData1[COEFFICIENT] }*x +{ lineData1[CONSTANT]} и y = { lineData2[COEFFICIENT] }*x +{ lineData2[CONSTANT]} ");
-        Console.WriteLine($" имеет координаты ({coord[X_COORD]}),{ coord[Y_COORD]})");
+    double[] coord = FindCoords(lineData1, lineData2);
+    Console.Write($"Точка пересечения уравнений  y ={lineData1[COEFFICIENT]}*x +{lineData1[CONSTANT]} и y = {lineData2[COEFFICIENT]}*x +{lineData2[CONSTANT]} ");
+    Console.WriteLine($" имеет координаты ({coord[X_COORD]}),{coord[Y_COORD]})");
 }
 
 //Ввод числа
@@ -32,26 +32,26 @@ double Prompt(string message)
 //Ввод данных по прямой
 double[] InputLineData(int numberOfLine)
 {
-    double[] lineData=new double[2];
+    double[] lineData = new double[2];
     lineData[COEFFICIENT] = Prompt($"Введите коэффициент для{numberOfLine}прямой>");
-    lineData[CONSTANT]=Prompt($"Введите константу для{numberOfLine}прямой>");
+    lineData[CONSTANT] = Prompt($"Введите константу для{numberOfLine}прямой>");
     return lineData;
 }
 double[] FindCoords(double[] lineData1, double[] lineData2)
 {
-    double[] coord=new double[2];
-    coord[X_COORD]=(lineData1[CONSTANT]-lineData2[CONSTANT])/(lineData2[COEFFICIENT]-lineData1 [COEFFICIENT]);
-    coord [Y_COORD]=lineData1 [CONSTANT ]*coord [X_COORD ]+lineData1 [CONSTANT ];
-    return coord ;
+    double[] coord = new double[2];
+    coord[X_COORD] = (lineData1[CONSTANT] - lineData2[CONSTANT]) / (lineData2[COEFFICIENT] - lineData1[COEFFICIENT]);
+    coord[Y_COORD] = lineData1[CONSTANT] * coord[X_COORD] + lineData1[CONSTANT];
+    return coord;
 }
 
-bool ValidataLines(double [] lineData1, double [] lineData2)
+bool ValidataLines(double[] lineData1, double[] lineData2)
 {
-    if(lineData1 [COEFFICIENT ]==lineData2 [COEFFICIENT ])
+    if (lineData1[COEFFICIENT] == lineData2[COEFFICIENT])
     {
-        if(lineData1 [CONSTANT ]==lineData2 [CONSTANT ])
+        if (lineData1[CONSTANT] == lineData2[CONSTANT])
         {
-            Console.W ("Прямые совпадают");
+            Console.WriteLine("Прямые совпадают");
             return false;
         }
     }
